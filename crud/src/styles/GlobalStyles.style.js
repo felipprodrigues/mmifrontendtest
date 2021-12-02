@@ -1,0 +1,131 @@
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyles = createGlobalStyle`
+  *,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  transition: ease-in 1s;
+
+  // LIGHT COLORS
+  --var-white: #fff;
+  --var-wild-sand: #f5f5f5;
+  --var-education: #f5f5f5;
+  --var-darkest: #222222;
+  --var-gray-mine-shaft: #2f2f2f;
+
+  // LIGHT MODE TEXT
+  --var-name: #fff;
+  --var-head-subtitle: #fff;
+  --var-dark-text: #000;
+  --var-desc-text: #555;
+  --var-hover-card: #77773c;
+  --var-titles: #000;
+  --var-contact-title: #fff;
+
+  // BOX-SHADOW
+  --var-box-shadow-vs-top: #494949;
+  --var-box-shadow-vs-bottom: #000;
+  --var-box-shadow-up-left: #6a6868;
+  --var-box-shadow-down-right: #6a6868;
+
+  // PICTURE BORDER
+  --var-pic-border: #f5f5f5;
+
+  // PROJECTS CARDS BOX-SHADOW
+  --var-box-sdw-static: rgba(99, 99, 99, 0.2);
+  --var-box-sdw-hvr-arnd: rgba(60, 64, 67, 0.3);
+  --var-box-sdw-hvr-top: rgba(60, 64, 67, 0.15);
+}
+
+body.darkMode {
+  // DARKER COLORS
+  --var-white: #303234;
+  --var-wild-sand: #303234;
+  --var-education: #303234;
+  --var-darkest: #1f1f1f;
+  --var-gray-mine-shaft: #1f1f1f;
+
+  //DARKMODE TEXT
+  --var-name: #f5deb3;
+  --var-head-subtitle: #f5deb3d6;
+  --var-dark-text: #d3d3d3;
+  --var-desc-text: #d3d3d3;
+  --var-hover-card: #f5deb3;
+  --var-titles: #fff7f7;
+  --var-contact-title: #fff7f7;
+
+  // BOX-SHADOW
+  --var-box-shadow-vs-top: #494949;
+  --var-box-shadow-vs-bottom: #000;
+  --var-box-shadow-up-left: #494949;
+  --var-box-shadow-down-right: #000;
+
+  // PICTURE BORDER
+  --var-pic-border: #555;
+
+  // PROJECTS CARDS BOX-SHADOW
+  --var-box-sdw-static: rgba(99, 99, 99, 0.25);
+  --var-box-sdw-hvr-arnd: rgb(96, 103, 108, 1);
+  --var-box-sdw-hvr-top: rgba(60, 64, 67, .8);
+}
+
+body.darkMode .projects__image {
+  filter: brightness(0.9);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  font-family: "Ledger", serif;
+}
+
+h1 {
+  color: black;
+}
+
+h2,
+h3,
+h4 {
+  color: var(--var-titles);
+}
+
+p {
+  line-height: 1.8;
+  font-family: "Libre Baskerville", serif;
+  font-size: 16px;
+  color: var(--var-dark-text);
+}
+
+hr {
+  display: none;
+}
+
+hr.dark-theme {
+  margin: 0;
+  width: 1px;
+}
+
+#root {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+`;
+
+export default GlobalStyles
