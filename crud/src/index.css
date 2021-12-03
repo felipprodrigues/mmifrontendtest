@@ -16,8 +16,6 @@ body {
   width: 100%;
   margin: 0;
   transition: ease-in 1s;
-  padding: 0 5em;
-
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
@@ -130,9 +128,22 @@ hr.dark-theme {
   width: 1px;
 }
 
-#root {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  min-height: 100%;
+.no-space-out {
+  margin: 0 !important;
+}
+
+.no-space-in {
+  padding: 0 !important;
+}
+
+input[type="text"] {
+  padding: 7px 13px;
+  border-radius: 4px;
+  border: 1px solid #DDD;
+}
+
+input[disabled] {
+  background: #F7F8FA;
+  border: none;
+
 }

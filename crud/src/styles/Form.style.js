@@ -2,10 +2,19 @@ import styled from 'styled-components';
 
 export const Form = styled.form`
   border: 0;
+  width 100%;
+  padding: 0 5em;
 `
+
+export const FormEdit = styled(Form)`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+`
+
 export const FormFieldset = styled.fieldset`
   border: 0;
-  margin: 0;
+  margin: 1.2em 0;
   min-width: 0;
   padding: 0;
   position: relative;
@@ -13,6 +22,12 @@ export const FormFieldset = styled.fieldset`
   & * {
     transition: all .3s linear;
   }
+`
+
+export const FormFieldsetEdit = styled(FormFieldset)`
+  width: 50%;
+  margin: 0;
+  margin-top: 2em;
 `
 
 export const FormLabel = styled.label`
