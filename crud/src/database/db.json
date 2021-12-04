@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "name": "Rigut Sgarna",
+      "cpf": "555.555.555-05",
+      "email": "rohitsarm@gmail.com",
+      "phone": "14124121421",
+      "cnpj": "14124121421-01",
+      "emprestimo": "1000",
+      "faturamento": "2000",
+      "endereco": "rua ruberttttino alabama",
+      "id": 1
+    },
+    {
+      "name": "Shahit bablbe",
+      "cpf": "555.555.555-05",
+      "email": "shahit@gmail.com",
+      "phone": "123456789",
+      "cnpj": "123456789-01",
+      "emprestimo": "160",
+      "faturamento": "5000",
+      "endereco": "rua chalubs alabama",
+      "id": 2
+    },
+    {
+      "name": "Khisten Hheh",
+      "cpf": "555.555.555-05",
+      "email": "khistenm@gmail.com",
+      "phone": "987654321",
+      "cnpj": "987654321-01",
+      "emprestimo": "10000",
+      "faturamento": "2500",
+      "endereco": "rua chalibs alabama",
+      "id": 3
+    }
+  ]
+}
