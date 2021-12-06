@@ -1,0 +1,92 @@
+{
+  "users": [
+    {
+      "nome": "Rodrigues",
+      "cpf": "43080077806",
+      "email": "felip@gmail.com",
+      "phone": "123456789",
+      "cnpj": "987654321",
+      "loan": "5000",
+      "revenue": "400000",
+      "address": "alameda",
+      "id": 1
+    },
+    {
+      "nome": "addUserDetails",
+      "cpf": "addUserDetails",
+      "email": "addUserDetails",
+      "phone": "addUserDetails",
+      "cnpj": "addUserDetails",
+      "loan": "addUserDetails",
+      "revenue": "addUserDetails",
+      "address": "addUserDetails",
+      "id": 8
+    },
+    {
+      "nome": "ewfewf",
+      "cpf": "wefwe",
+      "email": "wefwe",
+      "phone": "ewfwe",
+      "cnpj": "ewfwe",
+      "loan": "wefwe",
+      "revenue": "ewfwef",
+      "address": "wefewf",
+      "id": 9
+    },
+    {
+      "nome": "wefwe",
+      "cpf": "wefwef",
+      "email": "fewfwe",
+      "phone": "wefwe",
+      "cnpj": "wefwe",
+      "loan": "wefwef",
+      "revenue": "wefwe",
+      "address": "wefew",
+      "id": 10
+    },
+    {
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "phone": "",
+      "cnpj": "",
+      "loan": "",
+      "revenue": "",
+      "address": "",
+      "id": 11
+    },
+    {
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "phone": "",
+      "cnpj": "",
+      "loan": "",
+      "revenue": "",
+      "address": "",
+      "id": 12
+    },
+    {
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "phone": "",
+      "cnpj": "",
+      "loan": "",
+      "revenue": "",
+      "address": "",
+      "id": 13
+    },
+    {
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "phone": "",
+      "cnpj": "",
+      "loan": "",
+      "revenue": "",
+      "address": "",
+      "id": 14
+    }
+  ]
+}
