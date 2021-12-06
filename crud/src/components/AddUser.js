@@ -42,36 +42,36 @@ export const AddUser = () => {
             </FormFieldset>
             <FormFieldset>
               <FormLabel for="cpf">CPF do solicitante</FormLabel>
-              <FormInput onChange={(e) => onValueChange(e)} name='cpf' value={cpf} type="text" placeholder="Insira nome de usuário" autoFocus="autofocus" required></FormInput>
+              <FormInput onChange={(e) => onValueChange(e)} name='cpf' value={cpf} type="text" placeholder="Insira documento válido" autoFocus="autofocus" required></FormInput>
             </FormFieldset>
             <FormFieldset>
               <FormLabel for="email">Email para contato</FormLabel>
-              <FormInput onChange={(e) => onValueChange(e)} name='email' value={email} type="text" placeholder="Insira nome de usuário" autoFocus="autofocus" required></FormInput>
+              <FormInput onChange={(e) => onValueChange(e)} name='email' value={email} type="text" placeholder="john.doe@gmail.com" autoFocus="autofocus" required></FormInput>
             </FormFieldset>
             <FormFieldset>
               <FormLabel for="phone">Telefone de contato</FormLabel>
-              <FormInput onChange={(e) => onValueChange(e)} name='phone' value={phone} type="text" placeholder="Insira nome de usuário" autoFocus="autofocus" required></FormInput>
+              <FormInput onChange={(e) => onValueChange(e)} name='phone' value={phone} type="text" placeholder="(11)99999-8888" autoFocus="autofocus" required></FormInput>
             </FormFieldset>
             <FormFieldset>
               <FormLabel for="cnpj">CNPJ</FormLabel>
-              <FormInput onChange={(e) => onValueChange(e)} name='cnpj' value={cnpj} type="text" placeholder="Insira nome de usuário" autoFocus="autofocus" required></FormInput>
+              <FormInput onChange={(e) => onValueChange(e)} name='cnpj' value={cnpj} type="text" placeholder="Insira documento válido" autoFocus="autofocus" required></FormInput>
             </FormFieldset>
             <FormFieldset>
               <FormLabel for="loan">Valor do Empréstimo</FormLabel>
-              <FormInput onChange={(e) => onValueChange(e)} name='loan' value={loan} type="text" placeholder="Insira nome de usuário" autoFocus="autofocus" required></FormInput>
+              <FormInput onChange={(e) => onValueChange(e)} name='loan' value={loan} type="text" placeholder="Digite valor do empréstimo" autoFocus="autofocus" required></FormInput>
             </FormFieldset>
             <FormFieldset>
               <FormLabel for="revenue">Faturamento Anual da Empresa</FormLabel>
-              <FormInput onChange={(e) => onValueChange(e)} name='revenue' value={revenue} type="text" placeholder="Insira nome de usuário" autoFocus="autofocus" required></FormInput>
+              <FormInput onChange={(e) => onValueChange(e)} name='revenue' value={revenue} type="text" placeholder="Digite faturamento anual" autoFocus="autofocus" required></FormInput>
             </FormFieldset>
             <FormFieldset>
               <FormLabel for="address">Endereço da Empresa</FormLabel>
-              <FormInput onChange={(e) => onValueChange(e)} name='address' value={address} type="text" placeholder="Insira nome de usuário" autoFocus="autofocus" required></FormInput>
+              <FormInput onChange={(e) => onValueChange(e)} name='address' value={address} type="text" placeholder="Insira nome da empresa" autoFocus="autofocus" required></FormInput>
             </FormFieldset>
-
-            <ButtonSubmit onClick={(e) => addUserDetails(e)} background="#FE761C" >Confirmar</ButtonSubmit>
-            <ButtonCancel href="/" background="#EC644B" >X</ButtonCancel>
-
+            <div className="is-flex">
+              <ButtonSubmit onClick={(e) => addUserDetails(e)} background="#FE761C" >Confirmar</ButtonSubmit>
+              <ButtonCancel href="/" background="#EC644B" >X</ButtonCancel>
+            </div>
           </Form>
         </MainFieldset>
 
