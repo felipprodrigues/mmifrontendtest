@@ -1,164 +1,93 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { TableCell, TableRow, Table, TableHead, TableBody, Button } from '@material-ui/core';
-// import { makeStyles  } from '@material-ui/styles';
-import { getUsers } from '../service/api';
-import { ButtonReturn } from '../styles/Buttons.style'
-import { MainContainer } from '../styles/Main.style'
+import { editUser, getUsers } from '../service/api';
+import { useParams, Link } from 'react-router-dom';
+import { Form, FormFieldset, FormLabel, FormInput } from '../styles/Form.style'
+import { ButtonCancel, ButtonReturn } from '../styles/Buttons.style'
+import { MainContainer, MainWrapper, MainFieldset } from '../styles/Main.style'
 
-
-// const useStyles = makeStyles({
-//   table: {
-//     width: '90%',
-//     margin: '50px 0 0 50px'
-//   },
-//   thead: {
-//     '& > *': {
-//       fontSize: 20,
-//       background: '#000000',
-//       color: '#FFFFFF'
-//     }
-//   },
-//   row: {
-//     '& > *': {
-//       fontSize: 18
-//     }
-//   }
-// })
 
 export const EditUser = () => {
-const [users, setUsers] = useState([]);
-// const classes = useStyles();
+  const initialValues = {
+    nome: '',
+    cpf: '',
+    email: '',
+    phone: '',
+    cnpj: '',
+    loan: '',
+    revenue: '',
+    address: ''
+  }
 
-useEffect(() => {
-  getAllUsers();
-}, []);
+  const [user, setUser] = useState(initialValues);
+  const { nome, cpf, email, phone, cnpj, loan, revenue, address } = user;
+  const { id } = useParams();
+  // const history = useNavigate
 
-// const deleteUserData = async (id) => {
-//   await deleteUser(id);
-//   getAllUsers();
-// }
+  useEffect(() => {
+    loadUserData();
+  }, []);
 
-const getAllUsers = async () => {
-  let response = await getUsers();
-  setUsers(response.data);
+  const loadUserData = async() => {
+    const response = await getUsers(id);
+    setUser(response.data);
+  };
+
+  const onValueChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value })
+
+  }
+
+  const editUserDetails = async () => {
+    await editUser(id, user);
+  }
+
+  return (
+    <MainContainer>
+      <h1>Edite os dados cadastrais</h1>
+      <MainWrapper>
+        <MainFieldset width="100%" className="has-full-width is-centered">
+          <Form width="50%"  onSubmit={(e) => this.editUserDetails(e)}>
+            <FormFieldset>
+              <FormLabel for="nome">Nome</FormLabel>
+              <FormInput onChange={(e) => onValueChange(e)} name="nome" value={nome} type="text" placeholder="Insira nome de usuário" autoFocus="autofocus"></FormInput>
+            </FormFieldset>
+            <FormFieldset>
+              <FormLabel for="cpf">CPF do Solicitante</FormLabel>
+              <FormInput onChange={(e) => onValueChange(e)} name="cpf" value={cpf} type="text" placeholder="Insira nome de usuário" autoFocus="autofocus"></FormInput>
+            </FormFieldset>
+            <FormFieldset>
+              <FormLabel for="email">Email para contato</FormLabel>
+              <FormInput onChange={(e) => onValueChange(e)} name="email" value={email} type="text" placeholder="Insira nome de usuário" autoFocus="autofocus"></FormInput>
+            </FormFieldset>
+            <FormFieldset>
+              <FormLabel for="phone">Telefone de contato</FormLabel>
+              <FormInput onChange={(e) => onValueChange(e)} name="phone" value={phone} type="text" placeholder="Insira nome de usuário" autoFocus="autofocus"></FormInput>
+            </FormFieldset>
+            <FormFieldset>
+              <FormLabel for="cnpj">CNPJ</FormLabel>
+              <FormInput onChange={(e) => onValueChange(e)} name="cnpj" value={cnpj} type="text" placeholder="Insira nome de usuário" autoFocus="autofocus"></FormInput>
+            </FormFieldset>
+            <FormFieldset>
+              <FormLabel for="loan">Valor do Empréstimo</FormLabel>
+              <FormInput onChange={(e) => onValueChange(e)} name="loan" value={loan} type="text" placeholder="Insira nome de usuário" autoFocus="autofocus"></FormInput>
+            </FormFieldset>
+            <FormFieldset>
+              <FormLabel for="revenue">Faturamento Anual da Empresa</FormLabel>
+              <FormInput onChange={(e) => onValueChange(e)} name="revenue" value={revenue} type="text" placeholder="Insira nome de usuário" autoFocus="autofocus"></FormInput>
+            </FormFieldset>
+            <FormFieldset>
+              <FormLabel for="address">Endereço da Empresa</FormLabel>
+              <FormInput onChange={(e) => onValueChange(e)} name="address" value={address} type="text" placeholder="Insira nome de usuário" autoFocus="autofocus"></FormInput>
+            </FormFieldset>
+            <FormFieldset>
+              <Link className="button__edit" to={'/manage'} onClick={() => editUserDetails()} background="#2E7FED" >Salvar</Link>
+              <ButtonCancel href="/" background="#EC644B" >X</ButtonCancel>
+            </FormFieldset>
+          </Form>
+        </MainFieldset>
+
+      </MainWrapper>
+      <ButtonReturn href="/" background="transparent" >Voltar</ButtonReturn>
+    </MainContainer>
+  )
 }
-
-return (
-  <Table >
-    <TableHead>
-      <TableRow >
-        <TableCell>ID</TableCell>
-        <TableCell>Nome</TableCell>
-        <TableCell>CPF</TableCell>
-        <TableCell>Endereço</TableCell>
-        <TableCell>Email</TableCell>
-        <TableCell>Phone</TableCell>
-        <TableCell>CNPJ</TableCell>
-        <TableCell>Emprestimo</TableCell>
-        <TableCell>Faturamento</TableCell>
-        <TableCell></TableCell>
-      </TableRow>
-    </TableHead>
-    <TableBody>
-      {users.map((user) => (
-        <TableRow >
-          <TableCell>{user.id}</TableCell>
-          <TableCell>{user.name}</TableCell>
-          <TableCell>{user.cpf}</TableCell>
-          <TableCell>{user.endereco}</TableCell>
-          <TableCell>{user.email}</TableCell>
-          <TableCell>{user.phone}</TableCell>
-          <TableCell>{user.cnpj}</TableCell>
-          <TableCell>{user.emprestimo}</TableCell>
-          <TableCell>{user.faturamento}</TableCell>
-          <TableCell>
-            <Button color="primary" variant="contained" style={{ marginRight: 10 }} component={Link} to={`/edit/${user._id}`}>Edit</Button>
-            <Button color="secondary" variant="contained" >Delete</Button>
-          </TableCell>
-        </TableRow>
-      ))}
-    </TableBody>
-  </Table>
-)
-}
-
-
-// onClick={() => deleteUserData(user._id)}
-
-
-// import React, { useState, useEffect } from 'react';
-// import { Table, TableHead, TableCell, Paper, TableRow, TableBody, Button, makeStyles } from '@material-ui/core'
-// import { getUsers, deleteUser } from '../service/api';
-// import { Link } from 'react-router-dom';
-
-// const useStyles = makeStyles({
-//   table: {
-//     width: '90%',
-//     margin: '50px 0 0 50px'
-//   },
-//   thead: {
-//     '& > *': {
-//       fontSize: 20,
-//       background: '#000000',
-//       color: '#FFFFFF'
-//     }
-//   },
-//   row: {
-//     '& > *': {
-//       fontSize: 18
-//     }
-//   }
-// })
-
-
-// const AllUsers = () => {
-//   const [users, setUsers] = useState([]);
-//   const classes = useStyles();
-
-//   useEffect(() => {
-//     getAllUsers();
-//   }, []);
-
-//   const deleteUserData = async (id) => {
-//     await deleteUser(id);
-//     getAllUsers();
-//   }
-
-//   const getAllUsers = async () => {
-//     let response = await getUsers();
-//     setUsers(response.data);
-//   }
-
-//   return (
-//     <Table className={classes.table}>
-//       <TableHead>
-//         <TableRow className={classes.thead}>
-//           <TableCell>Id</TableCell>
-//           <TableCell>Name</TableCell>
-//           <TableCell>Username</TableCell>
-//           <TableCell>Email</TableCell>
-//           <TableCell>Phone</TableCell>
-//           <TableCell></TableCell>
-//         </TableRow>
-//       </TableHead>
-//       <TableBody>
-//         {users.map((user) => (
-//           <TableRow className={classes.row} key={user._id}>
-//             <TableCell>{user._id}</TableCell>
-//             <TableCell>{user.name}</TableCell>
-//             <TableCell>{user.username}</TableCell>
-//             <TableCell>{user.email}</TableCell>
-//             <TableCell>{user.phone}</TableCell>
-//             <TableCell>
-//               <Button color="primary" variant="contained" style={{ marginRight: 10 }} component={Link} to={`/edit/${user._id}`}>Edit</Button>
-//               <Button color="secondary" variant="contained" onClick={() => deleteUserData(user._id)}>Delete</Button>
-//             </TableCell>
-//           </TableRow>
-//         ))}
-//       </TableBody>
-//     </Table>
-//   )
-// }
-
-// export default EditUser;

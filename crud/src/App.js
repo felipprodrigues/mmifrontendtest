@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { GlobalProvider } from './context/GlobalState';
 import { Registration } from './components/Registration'
 import { AddUser } from './components/AddUser'
+import { ManageUser } from './components/ManageUser'
 import { EditUser } from './components/EditUser'
 import './index.css';
 
@@ -14,8 +15,9 @@ function App() {
         <Router>
           <Routes>
               <Route exact path="/" element={ <Registration /> } />
-              <Route path="/add" element={ <AddUser/> } />
-              <Route path="/edit/:id" element={ <EditUser/> } />
+              <Route exact path="/add" element={ <AddUser/> } />
+              <Route exact path="/manage" element={ <ManageUser/> } />
+              <Route exact path="/edit/:id" element={ <EditUser/> } />
           </Routes>
         </Router>
       </GlobalProvider>

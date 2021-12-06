@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  border: 0;
-  width 100%;
+  border: 1px solid black;
+  border-radius: 7px;
+  width: ${props => props.width};
   padding: 0 5em;
+  background: white;
+  margin: 1.2em 0 2.5em;
 `
 
 export const FormEdit = styled(Form)`

@@ -7,16 +7,18 @@ export const MainContainer = styled.div`
   flex-direction: column;
   min-width: 100%;
   width: 100%;
-  height: 90vh;
+`
 
+export const MainContainerHome = styled(MainContainer)`
+  min-width: unset;
+  width: unset;
 `
 
 export const MainWrapper = styled.div`
   display: flex;
   max-width: 85%;
   width: 100%;
-  height 80vh;
-  border: 1px solid black;
+  margin: 2em 0;
 `
 
 export const MainWrapperLandPage = styled(MainWrapper)`
@@ -25,15 +27,19 @@ export const MainWrapperLandPage = styled(MainWrapper)`
 `
 
 export const MainFieldset = styled.div`
-  max-width: 50%;
+  max-width: 70%;
   width: ${props => props.width};
-  background: cyan;
+  background: #2B2B2B;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 `
 
 export const MainHero = styled.div`
-  max-width: 50%;
+  max-width: 30%;
   width: ${props => props.width};
-  background: lightpink;
+  background: #FF8B3E;
   display: flex;
   justify-content: center;
   align-items: center;
