@@ -81,6 +81,10 @@ input[disabled] {
   width: 100%;
 }
 
+.has-margin-bottom {
+  margin-bottom: 1.2em;
+}
+
 .is-relative {
   position: relative;
   left: 50%;
@@ -90,6 +94,12 @@ input[disabled] {
 .is-centered {
   display: flex;
   justify-content: center;
+}
+
+.is-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .button__edit {
@@ -127,5 +137,6 @@ input[disabled] {
 .css-zcbmsk-MuiButtonBase-root-MuiButton-root {
   background: #EC644B !important;
 }
+
 
 

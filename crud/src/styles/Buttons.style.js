@@ -25,7 +25,6 @@ export const ButtonCancel = styled.a`
   filter: brightness(1);
   padding: .5em .75em;
   margin: 0 0 0 15px;
-  width: 100%;
   color: white;
   background: ${props => props.background};
   text-decoration: none;
@@ -33,8 +32,11 @@ export const ButtonCancel = styled.a`
   border-radius: 3px;
   cursor: pointer;
   line-height: 1.5;
-  max-width: 150px;
+  width: 10%;
   transition: all .2s linear;
+  height: 33px;
+  display: inline-block;
+  text-align: center;
 
 
   &:hover {
